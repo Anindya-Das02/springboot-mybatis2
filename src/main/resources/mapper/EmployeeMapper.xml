@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.example.mapper.EmployeeMapper">
+
+
+    <select id="findEmployeeById" parameterType="int" resultMap="employeeByIdResultMap">
+        select * from employees where id = #{id}
+    </select>
+
+    <resultMap id="employeeByIdResultMap" type="com.mybatis.example.models.Employee">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="yoe" property="yoe"/>
+        <result column="tech" property="tech"/>
+    </resultMap>
+
+</mapper>
